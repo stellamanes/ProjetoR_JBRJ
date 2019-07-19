@@ -64,5 +64,13 @@ getwd()
 #O Add serve para adicionar os arquivos. O commit serve pra criar um corte temporal nos arquivos, pra fazer um corte no arquivo para modificar depois (como se tivesse fazendo uma copia do documento pra salvar ate aquele momento uma copia e modificar a partir de entao). O push é para enviar os arquivos para o site, podem ser feitos varios commits offline e quando tiver internet upar tudo ao mesmo tempo.
 
 #Agora, depois de ter upado o arquivo ReadMe.txt, vamos modificar o arquivo. Abrir o arquivo e mexer nele. Agora se colocar "git status" vai dar pra ver que ele foi modificado. Agora vamos re-upar o arquivo no site do github
+# Antes de tudo, abre com um "git pull" para atualizar todas as modificacoes estao atualizadas (pq pode ser que alguem tenha feito alguma modificacao ou voce mudou algo em outro computador)
 
+
+#Comandos então: 
+# git pull
+# git status
+# git add nome.txt
+# git commit -m "mensagem pra adicionar"
+# git push -u 
 
