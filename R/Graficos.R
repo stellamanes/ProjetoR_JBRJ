@@ -123,10 +123,7 @@ plot(salario ~ experiencia, data=sal[sal$sexo=="M",],
      ylim=limy, xlim=limx,
      ylab="", xlab=labx)
 mtext("B", 3, adj=0, font=2)
-
-# linha do previsto pelo modelo # a + b*x 
-abline(a=coefm[1], b=coefm[2],
-       col='navy', lwd=2)
+abline(a=coefm[1], b=coefm[2], col='navy', lwd=2) # linha do previsto pelo modelo # a + b*x 
 
 
 dev.off()
@@ -150,9 +147,7 @@ abline(a=coefh[1], b=coefh[2],
 ## usando points para adicionar os pontos do salario das mulheres
 points(salario ~ experiencia, data=sal[sal$sexo=="M",], 
        col="navy")
-# linha do previsto pelo modelo das mulheres # a + b*x 
-abline(a=coefm[1], b=coefm[2],
-       col='navy', lwd=2)
+abline(a=coefm[1], b=coefm[2], col='navy', lwd=2) # linha do previsto pelo modelo das mulheres # a + b*x 
 
 # incluindo a legenda
 legend("topleft", legend=c("homens", "mulheres"),
@@ -170,7 +165,6 @@ plot(salario ~ experiencia, data=sal[sal$sexo=="H",],
      col="tomato",
      ylim=limy, xlim=limx,
      ylab=laby, xlab=labx)
-
 abline(a=coefh[1], b=coefh[2],
        col='tomato', lwd=2)
 
@@ -297,6 +291,7 @@ dev.off()
 
 
 
+par(mfrow=c(1,1), bty='l', las=1)
 
 # Desafio Aula 07 ---------------------------------------------------------
 #Construa um grafico de pontos, contendo cada uma das variaveis (comprimento da sepala, largura da sepala, comprimento da petala, largura da petala) no eixo x e os valores medios no eixo y. Inclua as barras de erro (representando o desvio padrao em torno da media). Salve o grafico em png no diretorio figs

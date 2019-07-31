@@ -99,11 +99,12 @@ mean(quebec_chilled$uptake)
 
 
 ###Exercicio 3 - Contagem de árvores em parcelas de 1 hectare na Ilha de Barro Colorado.
-#Salve os dados em uma planilha, Exporte para um arquivo de texto
+#Salve os dados em uma planilha, Exporte para um arquivo csv
 #planilha bruta: "./Data/exercicio_03.xlsx"
-#planilha como arquivo txt: ".Data/exercicio_03.txt"
-read.table("./Data/exercicio_03.txt", sep = " ", dec = ",")
-
+#planilha como arquivo csv: ".Data/exercicio_03.csv"
+exercicio3 <- read.csv2(file = "./Data/exercicio_03.csv", sep = ";", header = TRUE, row.names = 1) #colocando o row.names diz que o nome das especies nao eh um valor da dataframe, que eh o nome das colunas
+exercicio3
+colSums(exercicio3)
 
 ###Exercicio 4 - Dados do GBIF com 320 linhas e 45 colunas
 #Leia o arquivo “0012594-190621201848488.csv”
@@ -111,11 +112,11 @@ read.table("./Data/exercicio_03.txt", sep = " ", dec = ",")
 #salve um arquivo com esses dados
 #Dica: Use o help para descobrir outras funções para importar os dados.
 
+exercicio4 <- read.delim("./Data/0012594-190621201848488.csv")
+exercicio4
 
+exercicio4_spp_long_lat <- exercicio4[c("species", "decimalLongitude", "decimalLatitude")]
+exercicio4_spp_long_lat
 
-
-
-
-
-
+write.table(exercicio4_spp_long_lat, file = "./data/exercicio4_spp_long_lat.txt", sep = ",", dec = ".")
 

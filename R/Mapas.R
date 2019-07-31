@@ -93,7 +93,7 @@ plot(westeros, axes = T, col = terrain.colors(4))
 
 writeOGR(
   westeros_contorno, #nome do objeto a ser salvo
-  dsn = "./data/meushape", #diretorio a serem salvos os resultados
+  dsn = "./Data/meushape", #diretorio a serem salvos os resultados
   layer = "westeros_contorno", #nome do arquivo
   driver = "ESRI Shapefile" #formato pretendido para exportação
 )
