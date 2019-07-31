@@ -6,7 +6,7 @@ Os exercicios estão localizados nos seguintes scripts:
 Script Planilhas.R contem o exercicio 1 de formatacao de dados, no topico "Exercicios"
 
 -04 de manipulação de dados 
-Script Planilhas.R contem os exercicios 2, 3 e 4 de manipulacao de dados, no topico "Exercicios"
+Script Planilhas.R contem os exercicios 1, 2, 3 e 4 de manipulacao de dados, no topico "Exercicios"
 
 -06 do tutorial de análise exploratória de dados
 Script Analise_exploratoria_dados.R contem o exercicio 6, no topico "Tutorial aula 6"
@@ -18,7 +18,7 @@ Script Analise_exploratoria_dados.R contem o exercicio 6, no topico "Exercicios"
 Script Graficos.R contem o tutorial, no topico "Tutorial aula 07"
 
 -o exercício da aula de graficos (iris) e o desafio (opcional) 
-Script Graficos. R contem os exercicios do iris (exercicio aula 07) no topico "Exercicios"
+Script Graficos. R contem os exercicios do iris (exercicio aula 07) no topico "Exercicios" e o Desafio no topico "Desafio aula 07"
 
 -08 do tutorial de mapas 
 Script Mapas.R contem o tutorial de mapas
