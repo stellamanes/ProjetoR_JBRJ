@@ -2,18 +2,14 @@
 # Manipulacao de mapas no R -----------------------------------------------
 
 
-
-
-
 # Manipulacao de SHAPES ---------------------------------------------------
-
 
 #Manipulação de dados vetoriais
 #Lendo dados vetoriais e selecionar subconjunto
 
 #Existem várias opções de pacotes para importar dados vetoriais. Aqui usaremos o rgdal. Verifique se já tem instalado com library(rgdal), caso não carregue, então instale como de costume.
 
-install.packages("rgdal")
+#### install.packages("rgdal")
 library(rgdal)
 
 #Importando um shape (A Song of Ice and Fire Speculative World Map, disponível em Download) e plotando:
@@ -24,7 +20,7 @@ plot(westeros, las = 1, axes = T)
 abline(h = 0, lty = 2, col = "tomato") #plotando a linha do 'equador'
 
 names(westeros)
-westeros$ClaimedBy
+westeros$ClaimedBy #vendo quais regioes sao claimed por quais familias de Westeros
 
 #Selecionando ‘The North’ (região reivindicada pela casa Stark):
 stark <- westeros[westeros$ClaimedBy == "Stark",]
@@ -79,7 +75,7 @@ westeros
 #Unindo polígonos
 #A função aggregate do pacote raster pode ser utilizada também para juntar polígonos com base em um
 #Unindo tudo:
-install.packages("rgeos")
+####  install.packages("rgeos")
 library(rgeos)
 westeros_contorno = aggregate(westeros)
 plot(westeros_contorno, axes = T)
@@ -88,6 +84,9 @@ plot(westeros_contorno, axes = T)
 #Unindo por região:
 new_westeros = aggregate(westeros, by = "regiao")
 plot(westeros, axes = T, col = terrain.colors(12))
+
+#outro exemplo de cor
+plot(westeros, axes = T, col = terrain.colors(4))
 
 #Exportando um shape
 #Podemos exportar os shapes que criamos com a função writeOGR do pacote sp. Um detalhe importante: a função writeOGR só exporta objetos do formato SpatialPointsDataFrame, SpatialLinesDataFrame ou SpatialPolygonsDataFrame object.
@@ -119,6 +118,7 @@ plot(westeros_raster)
 #Um raster:
 var1 <- raster("./data/vars/var_1.tif")
 var1
+
 plot(var1)
 
 #Múltiplos rasters:
@@ -144,13 +144,14 @@ writeRaster(var1, "output.tif")
 writeFormats()
 
 #Álgebra de raster
-#É possível utilizar + operadores simples como: +, -, *, / + operadores lógicos como: >, >=, <, ==, ! + outras funções como:  abs, round, ceiling, floor, trunc, sqrt, log, log10, exp, cos, sin, max, min, range, prod, sum, any, all
+#É possível utilizar operadores simples como: +, -, *, / + operadores lógicos como: >, >=, <, ==, ! + outras funções como:  abs, round, ceiling, floor, trunc, sqrt, log, log10, exp, cos, sin, max, min, range, prod, sum, any, all
 media <- mean(vars)
 plot(media)
 
 #Modificando raster
 #Vamos utilizar o mesmo shape do início do tutorial para recortar um raster. Mas primeiro vamos selecionar parte deste shape.
 westeros <- readOGR("./data/GoTRelease/political.shp", encoding = "UTF-8")
+
 stark <- westeros[westeros$ClaimedBy == "Stark",]
 stark
 
@@ -163,6 +164,7 @@ plot(westeros, add = T)
 
 var1_croped <- crop(var1, stark)
 var1_croped
+
 plot(var1_croped)
 plot(stark, add = T)
 
@@ -170,9 +172,10 @@ plot(stark, add = T)
 var1_masked = mask(var1, stark)
 var1_masked
 plot(var1_masked)
+plot(stark, add = T)
 
 #Mas, muitas vezes usar o mask direto pode ser uma operação muito lenta. Então, podemos combinar as funções crop e mask para otimizar o processamento.
-var1.masked2 = mask(crop(var1,stark), stark)
+var1.masked2 = mask(crop(var1,stark), stark) #No R as operacoes funcionanm de dentro dos parentesis pra fora, por isso essa funciona como se tivesse cropando e depois markando
 var1.masked2
 plot(var1.masked2)
 plot(stark, add = T)
@@ -189,3 +192,6 @@ plot(stark, add = T)
 var1.aggregated = aggregate(var1, fact = 5, fun = "mean")
 var1.aggregated
 plot(var1.aggregated)
+
+
+

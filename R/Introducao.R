@@ -2,7 +2,6 @@
 
 # Plano da Disciplina -----------------------------------------------------
 
-
 #1)introducao a ciencia aberta
 #2)organizacao dos projetos de analise
 #3)Organizacao, formatacao e limpeza de dados
@@ -13,17 +12,14 @@
 
 
 
-
 # Introducao --------------------------------------------------------------
 
-#Al?m da coleta dos dados: o dado ? o meta-dado, ou seja, onde, quando, como, todos os detalhes sao extremamente importantes
+#Alem da coleta dos dados: o dado eh o meta-dado, ou seja, onde, quando, como, todos os detalhes sao extremamente importantes
 #Software Zotero - tipo o Mendeley, para gerenciar a bibliografia
 #Software git - para controlar as versoes dos seus projetos
 #Software ImageJ ou GIMP - para processar imagens
 
-#Dryad - repositorio que as revistas pedem pra uploadear os dados ou c?digo usado
-
-
+#Dryad - repositorio que as revistas pedem pra uploadear os dados ou codigo usado
 
 
 
@@ -34,24 +30,24 @@
 
 
 #para instalar pacotes e carregar:
-install.packages("nome")
-library("nome")
+install.packages("nome do pacote")
+library("nome do pacote")
 
-citation("nome") #como citar o pacote que foi usado para a analise
+citation("nome do pacote") #como citar o pacote que foi usado para a analise
 
-#utilizar caminhos relativos: ao inves de usar C://usuarios/stella/documentos etc, usar um ponto que diz "tudo antes disso ? relativo", o que vem depois do ponto ? compartilhavel ex: ./dados/resultados
+#utilizar caminhos relativos: ao inves de usar C://usuarios/stella/documentos etc, usar um ponto que diz "tudo antes disso eh relativo", o que vem depois do ponto eh compartilhavel ex: ./dados/resultados
 
 
 
-#Explorando as op??es gerais do R e personalizando o studio
+#Explorando as opcoes gerais do R e personalizando o studio
 
 ls()  #para listar os objetos no workspace
 rm(list = ls())  #para remover os objetos do workspace
 
-#Nas op?oes, selecionar a aba Terminal e escolher o Shell Git Bash, ele reconhece depois que tem o Git instalado
+#Nas opcoes, selecionar a aba Terminal e escolher o Shell Git Bash, ele reconhece depois que tem o Git instalado
 
 
-#Qual ? a pasta de trabalho? get work domain
+#Qual eh a pasta de trabalho? get work domain
 getwd()
 #Criar um projeto na pasta que deseja trabalhar
 getwd()
@@ -67,7 +63,7 @@ getwd()
 # Antes de tudo, abre com um "git pull" para atualizar todas as modificacoes estao atualizadas (pq pode ser que alguem tenha feito alguma modificacao ou voce mudou algo em outro computador)
 
 
-#Comandos então: 
+#Comandos então sao: 
 # git pull
 # git status
 # git add nome.txt
