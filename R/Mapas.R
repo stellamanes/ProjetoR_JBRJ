@@ -92,8 +92,8 @@ plot(westeros, axes = T, col = terrain.colors(4))
 #Podemos exportar os shapes que criamos com a função writeOGR do pacote sp. Um detalhe importante: a função writeOGR só exporta objetos do formato SpatialPointsDataFrame, SpatialLinesDataFrame ou SpatialPolygonsDataFrame object.
 
 writeOGR(
-  westeros_contorno, #nome do objeto a ser salvo
-  dsn = "./Data/meushape", #diretorio a serem salvos os resultados
+  as(westeros_contorno, "SpatialPolygonsDataFrame"), #nome do objeto a ser salvo
+  dsn = "./Results", #diretorio a serem salvos os resultados
   layer = "westeros_contorno", #nome do arquivo
   driver = "ESRI Shapefile" #formato pretendido para exportação
 )
